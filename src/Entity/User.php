@@ -21,9 +21,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private array $roles = [];
 
-    public function __contruct(){
-        print_r('jest');die;
-    }
     /**
      * Password variable
      * 

@@ -13,13 +13,13 @@ class ApiLoginController extends AbstractController
 {
    
     #[Route('/api/login', name: 'api_login')]
-    public function index(#[CurrentUser] ?User $user): JsonResponse
+    public function index(#[CurrentUser] ?User $user): Response
     {
-print_r($user);die;
+        print_r('jest');die;
         if (null === $user) {
             return $this->json([
-                'message' => 'missing credentials',
-                ], JsonResponse::HTTP_UNAUTHORIZED);
+            'message' => 'missing credentials',
+            ], Response::HTTP_UNAUTHORIZED);
         }
 
         $token = '123'; 
